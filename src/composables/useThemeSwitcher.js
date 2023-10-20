@@ -4,7 +4,7 @@ export default function useThemeSwitcher() {
 	const currentTheme = ref('light');
 
 	function toggleTheme() {
-		if (currentTheme.value == 'dark') {
+		if (currentTheme.value == 'light') {
 			setLightTheme();
 		} else {
 			setDarkTheme();
@@ -20,9 +20,9 @@ export default function useThemeSwitcher() {
 
 	// Dark Theme Function
 	function setDarkTheme() {
-		currentTheme.value = 'dark';
+		currentTheme.value = 'light';
 
-		process.isClient && localStorage.setItem('theme', 'dark');
+		process.isClient && localStorage.setItem('theme', 'light');
 	}
 
 	return {
