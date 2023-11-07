@@ -11,35 +11,54 @@ export default {
 			projects,
 			projectsHeading: 'Dialect Classes',
 			selectedCategory: '',
+			selectedDialect: '',
 			searchProject: '',
 		};
 	},
 	computed: {
-		// Get the filtered projects
-		filteredProjects() {
-			if (this.selectedCategory) {
-				return this.filterProjectsByCategory();
-			} else if (this.searchProject) {
-				return this.filterProjectsBySearch();
+    filteredProjects() {
+        let filtered = this.projects;
+
+        if (this.selectedCategory) {
+            filtered = this.filterProjectsByCategory(filtered);
+        }
+
+        if (this.selectedDialect) {
+            filtered = this.filterProjectsByDialect(filtered);
+        }
+
+        if (this.searchProject) {
+            filtered = this.filterProjectsBySearch(filtered);
+        }
+
+        return filtered;
+    },
+},
+methods: {
+    filterProjectsByCategory(filteredProjects) {
+        return filteredProjects.filter((item) => {
+            let category = item.category.charAt(0).toUpperCase() + item.category.slice(1);
+            return category.includes(this.selectedCategory);
+        });
+    },
+    filterProjectsByDialect(filteredProjects) {
+        return filteredProjects.filter((item) => item.dialect === this.selectedDialect);
+    },
+    filterProjectsBySearch(filteredProjects) {
+        let project = new RegExp(this.searchProject, 'i');
+        return filteredProjects.filter((el) => el.title.match(project));
+    },
+		getCategoryClass(category) {
+			switch (category.toLowerCase()) {
+				case 'beginner':
+					return 'beginner-color';
+				case 'intermediate':
+					return 'intermediate-color';
+				case 'advanced':
+					return 'advanced-color';
+				default:
+					return '';
 			}
-			return this.projects;
-		},
-	},
-	methods: {
-		// Filter projects by category
-		filterProjectsByCategory() {
-			return this.projects.filter((item) => {
-				let category =
-					item.category.charAt(0).toUpperCase() +
-					item.category.slice(1);
-				console.log(category);
-				return category.includes(this.selectedCategory);
-			});
-		},
-		// Filter projects by title search
-		filterProjectsBySearch() {
-			let project = new RegExp(this.searchProject, 'i');
-			return this.projects.filter((el) => el.title.match(project));
 		},
 	},
 	mounted() {
@@ -133,15 +152,26 @@ export default {
 
 		<!-- Projects grid -->
 		<div
-			class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10"
-		>
-			<ProjectSingle
-				v-for="project in filteredProjects"
-				:key="project.id"
-				:project="project"
-			/>
-		</div>
+		class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10"
+	>
+		<ProjectSingle
+			v-for="project in filteredProjects"
+			:key="project.id"
+			:project="project"
+			:class="getCategoryClass(project.category)"
+		/>
+	</div>
 	</section>
 </template>
 
-<style scoped></style>
+<style scoped>
+.filters {
+    display: flex;
+    /* Add any additional styling here */
+}
+.filter-select {
+    /* Styling for select elements */
+}
+/* Other styles... */
+</style>
+

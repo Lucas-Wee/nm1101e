@@ -1,42 +1,41 @@
+<template>
+    <div>
+        <!-- Filters and Title -->
+        <div class="flex justify-between items-center mb-5">
+            <!-- Title "EXPLORE" with Icon -->
+            <div class="flex items-center">
+                <font-awesome-icon :icon="['fab', 'wpexplorer']" size="2x"
+				bounce style="color: #000000;" class="mr-2" />
+				<!-- Font Awesome Icon -->
+                <h1 class="text-4xl font-bold">Explore the dialects!</h1>
+            </div>
+            
+            <!-- Filter Section -->
+            <div class="flex items-center">
+                <!-- Filter Funnel Icon -->
+                <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/filter-512.png" 
+				alt="Filter" class="mr-2 h-8 w-8" />
+                <!-- Filter Dropdown -->
+                <select class="border rounded-lg p-2">
+                    <option value="popularity">Popularity</option>
+                    <option value="newest">Newest to Oldest</option>
+                    <option value="oldest">Oldest to Newest</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</template>
+
 <script>
 export default {
 	setup() {
 		return {
-			bios: [
-				{
-					id: 1,
-					bio:
-						'Explore with us!'},
-				{
-					id: 2,
-					bio:
-						'Hui Lin best TA!'},
-			],
+
 		};
-	},
+	}
 };
 </script>
 
-<template>
-	<div class="block sm:flex sm:gap-10 mt-10 sm:mt-20">
-		<!-- About profile image -->
-		<div class="w-full sm:w-1/4 mb-7 sm:mb-0">
-			<img
-				src="https://i.pinimg.com/originals/36/ce/63/36ce6331e0cbed74f9ddc21a16e233f1.jpg"
-				class="rounded-xl w-96"
-				alt=""
-			/>
-		</div>
-
-		<!-- About details -->
-		<div class="w-full sm:w-3/4 text-left">
-			<p
-				v-for="bio in bios"
-				:key="bio.id"
-				class="font-general-regular mb-4 text-ternary-dark dark:text-ternary-light text-lg"
-			>
-				{{ bio.bio }}
-			</p>
-		</div>
-	</div>
-</template>
+<style>
+/* Add any additional CSS styling here */
+</style>
