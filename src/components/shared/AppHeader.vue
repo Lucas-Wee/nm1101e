@@ -87,13 +87,14 @@ export default {
 					<router-link to="/"
 						><img
 							v-if="theme === 'light'"
-							src="https://shenaniganswpie.files.wordpress.com/2018/05/nm1101e.jpg?w=940"
+							src="./logo1.png"
+							
 							class="w-36"
 							alt="Dark Logo"
 						/>
 						<img
 							v-else
-							src="https://shenaniganswpie.files.wordpress.com/2018/05/nm1101e.jpg?w=940"
+							src="./logo1.png"
 							class="w-36"
 							alt="Light Logo"
 						/>
