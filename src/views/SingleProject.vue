@@ -16,83 +16,43 @@ export default {
 	data: () => {
 		return {
 			singleProjectHeader: {
-				singleProjectTitle: 'Hokkien 101 Lesson',
-				singleProjectDate: 'Jul 26, 2023',
+				singleProjectTitle: 'Essential Greetings',
+				singleProjectDate: 'Updated Jul 26, 2023',
 				singleProjectTag: 'Beginner',
+				singleProjectTag2: 'Hokkien Dialect',
 			},
 			projectImages: [
 				{
 					id: 1,
 					title: 'Kabul Project Management UI',
-					img: require('@/assets/images/ui-project-1.jpg'),
+					img: 'https://media.istockphoto.com/id/1363793017/photo/asian-family-with-two-children-taking-a-walk-in-city-park.jpg?s=612x612&w=0&k=20&c=r8i3sJOUOaqxing9pLIP_yzmYqFBC9o-PA6NjRptT_w=',
 				},
 				{
 					id: 2,
 					title: 'Kabul Project Management UI',
-					img: require('@/assets/images/web-project-2.jpg'),
+					img: 'https://media.istockphoto.com/id/1297931559/photo/asian-chinese-family-and-cousins-having-reunion-dinner-at-home.jpg?s=612x612&w=0&k=20&c=Ldqi1Efyz7vVizdvYbKL9Rkepv_V8SeBBTCYJtXj140=',
 				},
 				{
 					id: 3,
 					title: 'Kabul Project Management UI',
-					img: require('@/assets/images/mobile-project-2.jpg'),
+					img: 'https://media.istockphoto.com/id/851452718/photo/happy-asian-business-team-working-together-in-office.jpg?s=612x612&w=0&k=20&c=2GCQcWhuI1vgWEkHQtfh8WtKsXedT8ddNTMt63gtGtg=',
 				},
 			],
 			projectInfo: {
-				clientHeading: 'About Client',
-				companyInfos: [
-					{
-						id: 1,
-						title: 'Name',
-						details: 'Company Ltd',
-					},
-					{
-						id: 2,
-						title: 'Services',
-						details: 'UI Design & Frontend Development',
-					},
-					{
-						id: 3,
-						title: 'Website',
-						details: 'https://company.com',
-					},
-					{
-						id: 4,
-						title: 'Phone',
-						details: '555 8888 888',
-					},
-				],
-				objectivesHeading: 'Objective',
-				objectivesDetails:
-					'',
+				objectivesHeading: 'Summary',
+				objectivesDetails: 'In this package, you will master the art of greetings in your chosen dialect. Learn how to say "hello," "goodbye," and exchange polite pleasantries. Get ready to impress your family and friends with your warm dialect greetings.',
 				technologies: [
 					{
-						title: 'Tools & Technologies',
+						title: 'Rating: 4.3★',
 						techs: [
-							'HTML',
-							'CSS',
-							'JavaScript',
-							'Vue.js',
-							'TailwindCSS',
-							'AdobeXD',
+							'5k+ Reviews'
 						],
 					},
 				],
-				projectDetailsHeading: 'Challenge',
+				projectDetailsHeading: 'Course Description',
 				projectDetails: [
 					{
 						id: 1,
-						details:
-							''},
-					{
-						id: 2,
-						details:
-							''},
-					{
-						id: 3,
-						details:
-							''},
-					{
-						id: 4,
 						details:
 							''},
 				],

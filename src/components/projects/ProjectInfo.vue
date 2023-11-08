@@ -98,7 +98,7 @@ export default {
 		</div>
 
 		<!-- Single project right section details -->
-		<div class="w-full sm:w-2/3 text-left mt-10 sm:mt-0">
+		<div class="w-full sm:w-1/3 text-left mt-10 sm:mt-0">
 			<p
 				class="font-general-medium text-primary-dark dark:text-primary-light text-2xl font-bold mb-7"
 			>
